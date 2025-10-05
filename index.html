@@ -1,21 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<main>
+  <!-- Video hero -->
+  <section class="hero-media">
+    <video class="teaser" controls muted playsinline poster="resources/images/landscape.jpg">
+      <source src="resources/videos/teaser.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <p class="supporting">Your personal travel guide</p>
+    <p class="subtext">Excursion remembers places you like, and recommends new points of interest around you.</p>
+  </section>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Excursion</title>
-    <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="resources/css/style.css" />
-</head>
+  <!-- Centered landscape image on its own line -->
+  <section class="visuals">
+    <p>
+      <img
+        class="landscape"
+        src="resources/images/landscape.jpg"
+        alt="Scenic landscape"
+        width="960"
+        height="540"
+      />
+    </p>
+  </section>
 
-<body>
-
-    <header class="top-section">
-        <h1>Discover hidden places in the world around you</h1>
-        <a class="download-link" href="#">Download Excursion (Coming soon!)</a>
-    </header>
-
-</body>
-
-</html>
+  <!-- Centered cellphone icon; it’s white, so we help it show up -->
+  <section class="icon-block" aria-label="Mobile app icon and download CTA">
+    <p>
+      <img
+        class="phone-icon"
+        src="resources/images/phone-icon.png"
+        alt="Cellphone icon"
+        width="64"
+        height="64"
+      />
+    </p>
+    <a class="download-link" href="#">Download Excursion (Coming soon!)</a>
+  </section>
+</main>
