@@ -1,29 +1,108 @@
-/* Layout */
-.hero-media { margin: 60px auto 40px; max-width: 960px; }
-.teaser { width: 100%; height: auto; display: block; border-radius: 12px; outline: none; }
+/* ===== Base / Tokens ===== */
+:root{
+  --bg:#000;
+  --text:#fff;
+  --muted:#9aa0a6;      /* gray body copy under H2 */
+  --brand:#7fffd4;      /* aquamarine link */
+  --maxw: 1024px;
 
-/* Text */
-.supporting { margin-top: 24px; font-size: 1.75rem; font-weight: 500; }
-.subtext { margin-top: 8px; font-size: 1.125rem; color: #cbd5e1; }
-
-/* Center images on their own line via <p> wrapper */
-.visuals p, .icon-block p { text-align: center; margin: 40px 0 16px; }
-.landscape { max-width: 100%; height: auto; border-radius: 12px; display: inline-block; }
-
-/* Phone icon visibility (white asset) */
-.icon-block {
-  margin: 24px auto 80px; max-width: 960px;
-  padding: 24px 16px; border-radius: 12px;
-  /* faint contrast so the white icon isn’t “invisible” on white */
-  background: rgba(255, 255, 255, 0.06);
+  --r-lg:32px;          /* big rounding (video frame) */
+  --space-2:0.5rem;
+  --space-4:1rem;
+  --space-6:1.5rem;
+  --space-8:2rem;
+  --space-12:3rem;
 }
-.phone-icon { display: inline-block; filter: drop-shadow(0 0 8px rgba(255,255,255,0.6)); }
 
-/* Reuse your link style; add spacing */
-.icon-block .download-link { display: inline-block; margin-top: 8px; }
+*{box-sizing:border-box}
+html{font-size:16px}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* per redline */
+  text-align:center;
+  padding:80px 20px;
+}
+a{color:var(--brand); text-decoration:none; font-size:16px}
+a:hover{ text-decoration:underline }
 
-/* Responsive bump */
-@media (min-width: 48rem) {
-  .supporting { font-size: 2rem; }
-  .subtext { font-size: 1.25rem; }
+/* ===== Top hero (H1 + link) ===== */
+.top-section{ max-width:var(--maxw); margin:0 auto var(--space-12) }
+.top-section h1{
+  font-weight:400;      /* Normal */
+  font-size:50px;       /* per redline */
+  line-height:1.15;
+  margin:0 0 var(--space-4);
+}
+.download-link{ display:inline-block }
+
+/* ===== Video “device” ===== */
+.hero-media{ max-width:var(--maxw); margin:0 auto var(--space-12) }
+.teaser{
+  display:block;
+  width:360px;          /* looks like the mock’s phone width */
+  max-width:90vw;
+  height:auto;
+  border-radius:var(--r-lg);
+  border:8px solid #333;                 /* bezel vibe */
+  box-shadow:0 18px 40px rgba(0,0,0,.6); /* lift like the mock */
+  margin:0 auto;
+}
+
+/* ===== Section title + body under video ===== */
+.supporting{
+  margin-top:40px;
+  font-weight:300;
+  font-size:42px;       /* per redline */
+}
+.subtext{
+  margin-top:var(--space-2);
+  color:var(--muted);
+  font-size:21px;       /* per redline */
+}
+
+/* ===== Landscape image (on its own line, centered) ===== */
+.visuals{ max-width:var(--maxw); margin:var(--space-8) auto }
+.visuals p{ margin:0; text-align:center }
+.landscape{
+  display:inline-block;
+  max-width:100%;
+  height:auto;
+  border-radius:12px;
+  box-shadow:0 10px 28px rgba(0,0,0,.5);
+  margin-top:var(--space-4);
+}
+
+/* ===== Phone icon + CTA block ===== */
+.icon-block{ max-width:var(--maxw); margin:var(--space-12) auto var(--space-12) }
+.icon-block p{ margin:0 0 var(--space-4) }
+.phone-icon{
+  display:inline-block;
+  width:64px; height:auto;
+  filter:drop-shadow(0 0 8px rgba(255,255,255,.6)); /* white-on-black visibility */
+}
+
+/* ===== Bottom H2 + link ===== */
+.coming{
+  font-weight:300;
+  font-size:42px;       /* per redline */
+  margin: var(--space-6) 0 var(--space-2);
+}
+
+/* ===== Footer copyright (right, gray) ===== */
+.site-footer{
+  max-width:var(--maxw);
+  margin:0 auto;
+  color:#9aa0a6;
+}
+.site-footer .legal{
+  text-align:right;
+  font-size:14px;
+  padding: 0 0 8px 0;
+}
+
+/* ===== Responsive bumps ===== */
+@media (min-width:48rem){
+  .teaser{ width:400px }
 }
