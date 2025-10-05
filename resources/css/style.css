@@ -1,0 +1,29 @@
+/* Layout */
+.hero-media { margin: 60px auto 40px; max-width: 960px; }
+.teaser { width: 100%; height: auto; display: block; border-radius: 12px; outline: none; }
+
+/* Text */
+.supporting { margin-top: 24px; font-size: 1.75rem; font-weight: 500; }
+.subtext { margin-top: 8px; font-size: 1.125rem; color: #cbd5e1; }
+
+/* Center images on their own line via <p> wrapper */
+.visuals p, .icon-block p { text-align: center; margin: 40px 0 16px; }
+.landscape { max-width: 100%; height: auto; border-radius: 12px; display: inline-block; }
+
+/* Phone icon visibility (white asset) */
+.icon-block {
+  margin: 24px auto 80px; max-width: 960px;
+  padding: 24px 16px; border-radius: 12px;
+  /* faint contrast so the white icon isn’t “invisible” on white */
+  background: rgba(255, 255, 255, 0.06);
+}
+.phone-icon { display: inline-block; filter: drop-shadow(0 0 8px rgba(255,255,255,0.6)); }
+
+/* Reuse your link style; add spacing */
+.icon-block .download-link { display: inline-block; margin-top: 8px; }
+
+/* Responsive bump */
+@media (min-width: 48rem) {
+  .supporting { font-size: 2rem; }
+  .subtext { font-size: 1.25rem; }
+}
